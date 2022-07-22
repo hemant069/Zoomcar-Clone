@@ -5,7 +5,7 @@ import { HomepageTop } from './Components/Homepage/HomepageTop';
 import { Mid } from './Components/Homepage/Mid';
 import { Login } from './Components/Sign&Login/Login';
 import { DetailForm } from './Components/Sign&Login/DetailForm';
-import { BookingCars } from './Components/Booking Cars/BookingCars';
+
 
 
 function App() {
@@ -13,7 +13,8 @@ function App() {
    <div>
   {/* <Login/> */}
   {/* <DetailForm/> */}
-  <BookingCars/>
+  {/* <BookingCars/> */}
+ 
    </div>
   );
 }
