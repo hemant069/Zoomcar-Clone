@@ -21,9 +21,14 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { useContext } from 'react';
+import { Authcontext } from '../../context/Authcontext';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const {isAuth,haldeLogout}=useContext(Authcontext)
+ 
+ 
 
   return (
     <Box>
@@ -221,7 +226,8 @@ const MobileNavItem = ({ label, children, href }) => {
 };
 
 
-
+const login=JSON.parse(localStorage.getItem('logindetails'))
+console.log(login)
 const NAV_ITEMS = [
  
   {
@@ -233,7 +239,7 @@ const NAV_ITEMS = [
     href: '#',
   },
   {
-    label: 'Login/Signup',
-    href: '#',
+    label: login!==null?login.name:'Login/Signup',
+    href: 'login',
   },
 ];

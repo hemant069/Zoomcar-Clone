@@ -1,9 +1,16 @@
 import { Box, Input, InputGroup, InputLeftAddon, Link, Modal, SimpleGrid, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import { Button, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/react"
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure() 
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    
+    const navigate=useNavigate()
+    const handledetail=()=>{
+      navigate('/Detailform')
+    }
+    
   return (
   <SimpleGrid justifyContent={"center"} color="grey">
     <Box>
@@ -43,7 +50,7 @@ export const Login = () => {
       </ModalBody>
 
       <ModalFooter>
-        <Button bg='rgb(16,163,16)' color="white" width={1000} >
+        <Button bg='rgb(16,163,16)' color="white" width={1000} onClick={handledetail} >
          Continue
         </Button>
         

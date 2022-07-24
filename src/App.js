@@ -11,6 +11,7 @@ import { Payment } from './Components/Payment/Payment';
 import Navbar from './Components/Homepage/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './Components/Homepage/HomePage';
+import { Card } from './Components/Payment/Card';
 
 
 
@@ -24,6 +25,8 @@ function App() {
   {/* <CarDetails/> */}
   {/* <Checkout/> */}
   {/* <Payment/> */}
+
+
   <Navbar/>
   <Routes>
     <Route path='/' element={<HomePage/>}/>
@@ -33,6 +36,7 @@ function App() {
       <Route path="/Detailform" element={<DetailForm/>}/>
       <Route path="/bookingcars" element={<BookingCars/>}/>
       <Route path="/checkout" element={<Checkout/>}/>
+      <Route path="/payment" element={<Payment/>}/>
      
      
     
