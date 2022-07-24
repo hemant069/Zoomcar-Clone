@@ -5,6 +5,7 @@ import {FaOilCan} from "react-icons/fa"
 import {IoEllipse} from "react-icons/io5"
 import {BsFillSquareFill} from "react-icons/bs"
 import {IoIosStar} from "react-icons/io"
+import { useNavigate } from 'react-router-dom'
 
 export const Checkout = () => {
 
@@ -12,8 +13,10 @@ export const Checkout = () => {
 
 let all=JSON.parse(localStorage.getItem('data'))
 
-
-
+let navigate=useNavigate()
+const handlepay=()=>{
+navigate('/payment')
+}
 
 
   return (
@@ -66,7 +69,7 @@ let all=JSON.parse(localStorage.getItem('data'))
         Apply Coupon
         </Box>
         </Box>
-        <Button bg="#10a310" _hover={{color:"white"}} mt="5"ml="200" width={"200px"} >Payment</Button>
+        <Button bg="#10a310" _hover={{color:"white"}} mt="5"ml="200" width={"200px"} onClick={handlepay} >Payment</Button>
 </Box>
     </SimpleGrid>
   )

@@ -6,6 +6,7 @@ import { useState } from 'react'
 import axios from "axios"
 import { useEffect } from 'react'
 import {AiFillStar} from "react-icons/ai"
+import { useNavigate } from 'react-router-dom'
 
 export const CarDetails = () => {
     const [Data,setData]=useState([])
@@ -19,6 +20,23 @@ export const CarDetails = () => {
 let date=Date.now()
 
    console.log(Data)
+
+
+   let navigate=useNavigate()
+   const [arr,setarr]=useState([])
+   const Bookingdata=(img,text,location,price,name)=>{
+      setarr({img,text,location,price,name})
+      window.location.href="/checkout"
+      
+      
+   }
+   
+   console.log(arr)
+   
+   useEffect(()=>{
+       localStorage.setItem('data',JSON.stringify(arr))
+       
+   },[arr])
   
   return (
     <Box  >
@@ -38,7 +56,7 @@ let date=Date.now()
         <Box>
             <Box fontWeight={"bold"}>{el.price}</Box>
             <Box mt="5">
-                <Button bg="white" border="1px solid #10a310" _hover={{background:"#10a310",color:"white"}}>Book Now</Button>
+                <Button bg="white" border="1px solid #10a310" _hover={{background:"#10a310",color:"white"}} onClick={()=>Bookingdata(el.imgsrc,el.text,el.location,el.price,el.location)}>Book Now</Button>
             </Box>
         </Box>
        </Box>
