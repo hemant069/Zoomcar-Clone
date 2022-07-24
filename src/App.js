@@ -1,4 +1,3 @@
-
 import './App.css';
 
 import { HomepageTop } from './Components/Homepage/HomepageTop';
@@ -7,17 +6,38 @@ import { Login } from './Components/Sign&Login/Login';
 import { DetailForm } from './Components/Sign&Login/DetailForm';
 import { BookingCars } from './Components/Booking Cars/BookingCars';
 import { CarDetails } from './Components/Data/CarDetails';
+import { Checkout } from './Components/Checkout/Checkout';
+import { Payment } from './Components/Payment/Payment';
+import Navbar from './Components/Homepage/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './Components/Homepage/HomePage';
 
 
 
 function App() {
   return (
    <div>
-  {/* <Login/> */}
-  {/* <DetailForm/> */}
+   
+ {/* <DetailForm/> */}
   
-  <BookingCars/>
+  {/* <BookingCars/> */}
   {/* <CarDetails/> */}
+  {/* <Checkout/> */}
+  {/* <Payment/> */}
+  <Navbar/>
+  <Routes>
+    <Route path='/' element={<HomePage/>}/>
+    <Route path="/login" element={<Login/>}>
+    
+      </Route>
+      <Route path="/Detailform" element={<DetailForm/>}/>
+      <Route path="/bookingcars" element={<BookingCars/>}/>
+      <Route path="/checkout" element={<Checkout/>}/>
+     
+     
+    
+  </Routes>
+  
    </div>
   );
 }
